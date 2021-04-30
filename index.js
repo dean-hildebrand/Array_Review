@@ -78,11 +78,11 @@
 
 //------------------ Count Occurences ---------------------------
 
-const numbers = [1, 2, 3, 4, 1, 5, 1];
+// const numbers = [1, 2, 3, 4, 1, 5, 1];
 
-const count = countOccurences(numbers, 5);
+// const count = countOccurences(numbers, 5);
 
-console.log(count);
+// console.log(count);
 
 // function countOccurences(array, searchElement) {
 //   let count = 0;
@@ -92,10 +92,28 @@ console.log(count);
 //   return count;
 // }
 
-function countOccurences(array, searchElement) {
-  return array.reduce((accumulator, currentValue) => {
-    const occurence = currentValue === searchElement ? 1 : 0;
-    console.log(accumulator, currentValue, searchElement);
-    return accumulator + occurence;
-  }, 0);
+// function countOccurences(array, searchElement) {
+//   return array.reduce((accumulator, currentValue) => {
+//     const occurence = currentValue === searchElement ? 1 : 0;
+//     console.log(accumulator, currentValue, searchElement);
+//     return accumulator + occurence;
+//   }, 0);
+// }
+
+//------------------ Get Max ---------------------------
+
+let numbers = [9, 2, 3, 400, 1, 51, 1];
+
+const max = getMax(numbers);
+
+console.log(max);
+
+function getMax(array) {
+  if (array.length === 0) return undefined;
+
+  let max = array[0];
+  for (let element of array) {
+    if (element > max) max = element;
+  }
+  return max;
 }
