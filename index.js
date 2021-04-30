@@ -57,21 +57,45 @@
 
 //------------------ Moving an element ---------------------------
 
-const numbers = [1, 2, 3, 4, 5];
+// const numbers = [1, 2, 3, 4, 5];
 
-const output = move(numbers, 0, -5);
+// const output = move(numbers, 0, -5);
 
-console.log(output);
+// console.log(output);
 
-function move(array, index, offset) {
-  const position = index + offset;
-  if (position >= array.length || position < 0) {
-    console.error("Invalid offset");
-    return;
-  }
+// function move(array, index, offset) {
+//   const position = index + offset;
+//   if (position >= array.length || position < 0) {
+//     console.error("Invalid offset");
+//     return;
+//   }
 
-  const output = [...array];
-  const element = output.splice(index, 1)[0];
-  output.splice(position, 0, element);
-  return output;
+//   const output = [...array];
+//   const element = output.splice(index, 1)[0];
+//   output.splice(position, 0, element);
+//   return output;
+// }
+
+//------------------ Count Occurences ---------------------------
+
+const numbers = [1, 2, 3, 4, 1, 5, 1];
+
+const count = countOccurences(numbers, 5);
+
+console.log(count);
+
+// function countOccurences(array, searchElement) {
+//   let count = 0;
+//   for (let element of array) {
+//     if (element === searchElement) count++;
+//   }
+//   return count;
+// }
+
+function countOccurences(array, searchElement) {
+  return array.reduce((accumulator, currentValue) => {
+    const occurence = currentValue === searchElement ? 1 : 0;
+    console.log(accumulator, currentValue, searchElement);
+    return accumulator + occurence;
+  }, 0);
 }
