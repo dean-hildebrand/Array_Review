@@ -22,17 +22,35 @@
 
 // console.log(number);
 
-//------------------ Includes ---------------------------
+//------------------ Includes Function ---------------------------
 
-const numbers = [2, 3, 5];
+// const numbers = [2, 3, 5];
 
-console.log(includes(numbers, 5));
+// console.log(includes(numbers, 5));
 
-function includes(array, searchElement) {
+// function includes(array, searchElement) {
+//   for (let element of array) {
+//     if (element === searchElement) {
+//       return true;
+//     }
+//     return false;
+//   }
+// }
+
+//------------------ Excludes Function ---------------------------
+
+const numbers = [1, 2, 3, 4, 5];
+
+const output = except(numbers, [2]);
+
+console.log(output);
+
+function except(array, excluded) {
+  let output = [];
   for (let element of array) {
-    if (element === searchElement) {
-      return true;
+    if (!excluded.includes(element)) {
+      output.push(element);
     }
-    return false;
   }
+  return output;
 }
