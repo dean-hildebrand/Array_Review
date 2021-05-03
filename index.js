@@ -131,18 +131,31 @@ const movies = [
 //Sort by rating in descending order
 //Pick title and display on console
 
-function moviesWith4Rating(array) {
-  //   let newArr = [];
-  //   for (let movie in array) {
-  //     if (array[movie].year === 2018) newArr.push(array[movie]);
-  //   }
-  //   return newArr;
-  const titles = array
-    .filter((movie) => movie.year === 2018 && movie.rating >= 4)
-    .sort((a, b) => a.rating - b.rating)
-    .reverse()
-    .map((movie) => movie.title);
-  console.log(titles);
+// function moviesWith4Rating(array) {
+//   let newArr = [];
+//   for (let movie in array) {
+//     if (array[movie].year === 2018) newArr.push(array[movie]);
+//   }
+//   return newArr;
+//   const titles = array
+//     .filter((movie) => movie.year === 2018 && movie.rating >= 4)
+//     .sort((a, b) => a.rating - b.rating)
+//     .reverse()
+//     .map((movie) => movie.title);
+//   console.log(titles);
+// }
+
+// console.log(moviesWith4Rating(movies));
+
+//----------------FUNCTIONS PRACTICE-----------------------------
+
+// const numArr = [1, 2, 3];
+
+function sum(...items) {
+  if ((items.length = 1 && Array.isArray(items[0]))) {
+    items = [...items[0]];
+  }
+  return items.reduce((a, b) => a + b);
 }
 
-console.log(moviesWith4Rating(movies));
+console.log(sum([1, 2, 3, 4]));
